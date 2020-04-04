@@ -12,7 +12,6 @@
         <itemPath>include/NDLoop.hpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Rules" projectFiles="true">
-        <itemPath>include/BoxLineReduction.hpp</itemPath>
         <itemPath>include/HiddenSingle.hpp</itemPath>
         <itemPath>include/NakedSingle.hpp</itemPath>
         <itemPath>include/Rule.hpp</itemPath>
@@ -32,7 +31,6 @@
         <itemPath>src/NDLoop.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Rules" projectFiles="true">
-        <itemPath>src/BoxLineReduction.cpp</itemPath>
         <itemPath>src/HiddenSingle.cpp</itemPath>
         <itemPath>src/NakedSingle.cpp</itemPath>
         <itemPath>src/Rule.cpp</itemPath>
@@ -76,8 +74,6 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="include/BoxLineReduction.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/Direction.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Element.hpp" ex="false" tool="3" flavor2="0">
@@ -95,8 +91,6 @@
       <item path="include/Rule.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Solver.hpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/BoxLineReduction.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Element.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -146,8 +140,6 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="include/BoxLineReduction.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/Direction.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Element.hpp" ex="false" tool="3" flavor2="0">
@@ -165,8 +157,6 @@
       <item path="include/Rule.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Solver.hpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/BoxLineReduction.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Element.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -21,6 +21,11 @@ int main(int, char** argv) {
     solver.addRule(&hiddenSingle);
     solver.addRule(&boxLineReduction);
     
+    // Test configuration
+    //solver.addRule(&boxLineReduction);
+    //solver.addRule(&hiddenSingle);
+    //solver.addRule(&nakedSingle);
+    
     std::cout << "Running solver" << std::endl << std::endl;
     
     if (solver.solve()) {

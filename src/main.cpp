@@ -4,6 +4,7 @@
 #include "NakedSingle.hpp"
 #include "HiddenSingle.hpp"
 #include "BoxLineReduction.hpp"
+#include "IntersectionRemoval.hpp"
 
 int main(int, char** argv) {
     DataStructures::Grid grid(*(argv + 1));
@@ -16,12 +17,15 @@ int main(int, char** argv) {
     Rules::NakedSingle nakedSingle(&grid);
     Rules::HiddenSingle hiddenSingle(&grid);
     Rules::BoxLineReduction boxLineReduction(&grid);
+    Rules::IntersectionRemoval intersectionRemoval(&grid);
     
     solver.addRule(&nakedSingle);
     solver.addRule(&hiddenSingle);
     solver.addRule(&boxLineReduction);
+    solver.addRule(&intersectionRemoval);
     
     // Test configuration
+    //solver.addRule(&intersectionRemoval);
     //solver.addRule(&boxLineReduction);
     //solver.addRule(&hiddenSingle);
     //solver.addRule(&nakedSingle);

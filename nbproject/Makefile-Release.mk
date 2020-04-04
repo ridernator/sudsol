@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Element.o \
 	${OBJECTDIR}/src/Grid.o \
 	${OBJECTDIR}/src/HiddenSingle.o \
+	${OBJECTDIR}/src/IntersectionRemoval.o \
 	${OBJECTDIR}/src/NDLoop.o \
 	${OBJECTDIR}/src/NakedSingle.o \
 	${OBJECTDIR}/src/Rule.o \
@@ -89,6 +90,11 @@ ${OBJECTDIR}/src/HiddenSingle.o: src/HiddenSingle.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -Wall -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/HiddenSingle.o src/HiddenSingle.cpp
+
+${OBJECTDIR}/src/IntersectionRemoval.o: src/IntersectionRemoval.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O3 -Wall -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/IntersectionRemoval.o src/IntersectionRemoval.cpp
 
 ${OBJECTDIR}/src/NDLoop.o: src/NDLoop.cpp
 	${MKDIR} -p ${OBJECTDIR}/src

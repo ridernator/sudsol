@@ -21,12 +21,17 @@ bool Solver::solve() {
         didSomething = false;
         
         for (auto rule : rules) {
-            std::cout << "Running rule \"" << rule->getName() << '\"' << std::endl;
+            std::cout << "Running rule \"" << rule->getName() << "..." ;
             if (rule->solve()) {
-                //grid->printGrid();
+                std::cout << "changes made : " << std::endl;
+                grid->printGrid();
+                std::cout << std::endl;
+                
                 didSomething = true;
                 
                 break;
+            } else {
+                std::cout << "no change" << std::endl;
             }
         }
 

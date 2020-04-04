@@ -1,5 +1,4 @@
 #include <iostream>
-#include "NDLoop.hpp"
 #include "Grid.hpp"
 #include "Solver.hpp"
 #include "NakedSingle.hpp"
@@ -8,7 +7,9 @@
 int main(int, char** argv) {
     DataStructures::Grid grid(*(argv + 1));
 
+    std::cout << std::endl<< "Initial grid :" << std::endl;
     grid.printGrid();
+    std::cout << std::endl;
     
     Solver solver(&grid);
     Rules::NakedSingle nakedSingle(&grid);
@@ -17,18 +18,15 @@ int main(int, char** argv) {
     solver.addRule(&nakedSingle);
     solver.addRule(&hiddenSingle);
     
-    std::cout << "Solving" << std::endl;
-    solver.solve();
+    std::cout << "Running solver" << std::endl << std::endl;
+    
+    if (solver.solve()) {
+        std::cout << "Solved :" << std::endl;
+    } else {        
+        std::cout << "Not solved :" << std::endl;
+    }
     
     grid.printGrid();
-    
-//    for (auto a : DataStructures::NDArray(4, 9)) {
-//        for (auto b : a) {
-//            std::cerr << b << ", ";
-//        }
-//        
-//        std::cerr << std::endl;
-//    }
 
     return 0;
 }

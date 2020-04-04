@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="DataStructures" projectFiles="true">
+        <itemPath>include/Direction.hpp</itemPath>
+        <itemPath>include/Element.hpp</itemPath>
+        <itemPath>include/Grid.hpp</itemPath>
+        <itemPath>include/House.hpp</itemPath>
+        <itemPath>include/NDLoop.hpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="Rules" projectFiles="true">
+        <itemPath>include/BoxLineReduction.hpp</itemPath>
+        <itemPath>include/HiddenSingle.hpp</itemPath>
+        <itemPath>include/NakedSingle.hpp</itemPath>
+        <itemPath>include/Rule.hpp</itemPath>
+      </logicalFolder>
+      <itemPath>include/Solver.hpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="DataStructures" projectFiles="true">
+        <itemPath>src/Element.cpp</itemPath>
+        <itemPath>src/Grid.cpp</itemPath>
+        <itemPath>src/NDLoop.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="Rules" projectFiles="true">
+        <itemPath>src/BoxLineReduction.cpp</itemPath>
+        <itemPath>src/HiddenSingle.cpp</itemPath>
+        <itemPath>src/NakedSingle.cpp</itemPath>
+        <itemPath>src/Rule.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>src/Solver.cpp</itemPath>
+      <itemPath>src/main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>test</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>11</standard>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <commandLine>-Wall -Wextra</commandLine>
+          <warningLevel>2</warningLevel>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibStdlibItem>PosixThreads</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="include/BoxLineReduction.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Direction.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Element.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Grid.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/HiddenSingle.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/House.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/NDLoop.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/NakedSingle.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Rule.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Solver.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/BoxLineReduction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Element.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Grid.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/HiddenSingle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NDLoop.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NakedSingle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Rule.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Solver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>6</developmentMode>
+          <standard>11</standard>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <commandLine>-Wall -Wextra</commandLine>
+          <warningLevel>2</warningLevel>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibStdlibItem>PosixThreads</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="include/BoxLineReduction.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Direction.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Element.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Grid.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/HiddenSingle.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/House.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/NDLoop.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/NakedSingle.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Rule.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Solver.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/BoxLineReduction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Element.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Grid.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/HiddenSingle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NDLoop.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NakedSingle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Rule.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Solver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

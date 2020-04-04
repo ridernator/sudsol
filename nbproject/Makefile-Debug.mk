@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/BoxLineReduction.o \
 	${OBJECTDIR}/src/Element.o \
 	${OBJECTDIR}/src/Grid.o \
 	${OBJECTDIR}/src/HiddenSingle.o \
@@ -68,6 +69,11 @@ LDLIBSOPTIONS=-lpthread
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/sudsol: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/sudsol ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/src/BoxLineReduction.o: src/BoxLineReduction.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/BoxLineReduction.o src/BoxLineReduction.cpp
 
 ${OBJECTDIR}/src/Element.o: src/Element.cpp
 	${MKDIR} -p ${OBJECTDIR}/src

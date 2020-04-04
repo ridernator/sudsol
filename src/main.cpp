@@ -3,6 +3,7 @@
 #include "Solver.hpp"
 #include "NakedSingle.hpp"
 #include "HiddenSingle.hpp"
+#include "BoxLineReduction.hpp"
 
 int main(int, char** argv) {
     DataStructures::Grid grid(*(argv + 1));
@@ -14,9 +15,11 @@ int main(int, char** argv) {
     Solver solver(&grid);
     Rules::NakedSingle nakedSingle(&grid);
     Rules::HiddenSingle hiddenSingle(&grid);
+    Rules::BoxLineReduction boxLineReduction(&grid);
     
     solver.addRule(&nakedSingle);
     solver.addRule(&hiddenSingle);
+    solver.addRule(&boxLineReduction);
     
     std::cout << "Running solver" << std::endl << std::endl;
     

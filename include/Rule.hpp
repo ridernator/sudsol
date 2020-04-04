@@ -25,8 +25,20 @@ namespace Rules {
 
             static DataStructures::Element* getStartOfBox(DataStructures::Element* element);
 
-            static DataStructures::Element* getStartOfHouse(const DataStructures::House house,
+            static DataStructures::Element* getStartOfHouse(DataStructures::House house,
                                                             DataStructures::Element* element);
+            
+            static std::set<DataStructures::Element*> getElementsWithCandidate(const DataStructures::House house,
+                                                                               DataStructures::Element* elementInHouse,
+                                                                               const uint64_t candidate);
+            
+            static bool areElementsInSameHouse(const std::set<DataStructures::Element*> elements,
+                                               const DataStructures::House house);
+            
+            static bool removeCandidatesFromHouse(const uint64_t candidate,
+                                                  const DataStructures::House house,
+                                                  DataStructures::Element* elementInHouse,
+                                                  const std::set<DataStructures::Element*> apartFrom);
 
             const std::string& getName() const;
 

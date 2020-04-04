@@ -50,7 +50,7 @@ namespace DataStructures {
             element = getRow(rowIndex);
 
             while (element != NULL) {
-                if (values[stringIndex] != '0') {
+                if ((values[stringIndex] != '0') && (values[stringIndex] != '.')) {
                     Rules::Rule::setValue(element, values[stringIndex] - '1');
                 }
 

@@ -32,6 +32,14 @@ namespace Rules {
                                                                                DataStructures::Element* elementInHouse,
                                                                                const uint64_t candidate);
             
+            static std::set<DataStructures::Element*> getElementsWithCandidates(const DataStructures::House house,
+                                                                                DataStructures::Element* elementInHouse,
+                                                                                const std::vector<uint64_t> candidates);
+            
+            static std::set<DataStructures::Element*> getElementsWithOnlyCandidates(const DataStructures::House house,
+                                                                                    DataStructures::Element* elementInHouse,
+                                                                                    const std::vector<uint64_t> candidates);
+            
             static bool areElementsInSameHouse(const std::set<DataStructures::Element*> elements,
                                                const DataStructures::House house);
             
@@ -44,8 +52,15 @@ namespace Rules {
 
         protected:
             DataStructures::Grid* grid;
+            
+            void setName(const std::string& name);
 
         private:
-            const std::string name;
+            std::string name;
+            
+            static std::set<DataStructures::Element*> getElementsWithCandidates(const DataStructures::House house,
+                                                                                DataStructures::Element* elementInHouse,
+                                                                                const std::vector<uint64_t> candidates,
+                                                                                const bool only);
     };
 }

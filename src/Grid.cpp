@@ -137,6 +137,7 @@ namespace DataStructures {
                 break;
             }
 
+            default:
             case House::BOX:
             {
                 returnVal = data[{boxHeight * (index / boxHeight), boxWidth * (index % boxWidth)}];

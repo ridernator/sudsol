@@ -15,6 +15,7 @@
         <itemPath>include/BoxLineReduction.hpp</itemPath>
         <itemPath>include/HiddenSingle.hpp</itemPath>
         <itemPath>include/IntersectionRemoval.hpp</itemPath>
+        <itemPath>include/NakedN.hpp</itemPath>
         <itemPath>include/NakedSingle.hpp</itemPath>
         <itemPath>include/Rule.hpp</itemPath>
       </logicalFolder>
@@ -36,6 +37,7 @@
         <itemPath>src/BoxLineReduction.cpp</itemPath>
         <itemPath>src/HiddenSingle.cpp</itemPath>
         <itemPath>src/IntersectionRemoval.cpp</itemPath>
+        <itemPath>src/NakedN.cpp</itemPath>
         <itemPath>src/NakedSingle.cpp</itemPath>
         <itemPath>src/Rule.cpp</itemPath>
       </logicalFolder>
@@ -94,6 +96,8 @@
       </item>
       <item path="include/NDLoop.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/NakedN.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/NakedSingle.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Rule.hpp" ex="false" tool="3" flavor2="0">
@@ -111,6 +115,8 @@
       <item path="src/IntersectionRemoval.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NDLoop.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NakedN.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NakedSingle.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -168,6 +174,8 @@
       </item>
       <item path="include/NDLoop.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/NakedN.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/NakedSingle.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Rule.hpp" ex="false" tool="3" flavor2="0">
@@ -185,6 +193,8 @@
       <item path="src/IntersectionRemoval.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NDLoop.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NakedN.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NakedSingle.cpp" ex="false" tool="1" flavor2="0">
       </item>

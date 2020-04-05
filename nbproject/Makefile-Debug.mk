@@ -41,6 +41,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/HiddenSingle.o \
 	${OBJECTDIR}/src/IntersectionRemoval.o \
 	${OBJECTDIR}/src/NDLoop.o \
+	${OBJECTDIR}/src/NakedN.o \
 	${OBJECTDIR}/src/NakedSingle.o \
 	${OBJECTDIR}/src/Rule.o \
 	${OBJECTDIR}/src/Solver.o \
@@ -100,6 +101,11 @@ ${OBJECTDIR}/src/NDLoop.o: src/NDLoop.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/NDLoop.o src/NDLoop.cpp
+
+${OBJECTDIR}/src/NakedN.o: src/NakedN.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/NakedN.o src/NakedN.cpp
 
 ${OBJECTDIR}/src/NakedSingle.o: src/NakedSingle.cpp
 	${MKDIR} -p ${OBJECTDIR}/src

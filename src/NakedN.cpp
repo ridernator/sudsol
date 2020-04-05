@@ -18,7 +18,7 @@ namespace Rules {
 
         for (auto house : DataStructures::HOUSES) {
             for (auto element : grid->getHouses(house)) {
-                DataStructures::NDLoop loop(N, 9);
+                DataStructures::NDLoop loop(N, grid->getOrder());
                 
                 for (auto set : loop) {
                     auto possibleSet = getElementsWithOnlyCandidates(house, element, set);

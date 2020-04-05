@@ -17,6 +17,8 @@ namespace DataStructures {
                         private:
                             std::vector<uint64_t> heldItem;
                     };
+                    
+                    bool unique(std::vector<uint64_t>& values);
 
                     std::vector<uint64_t> set;
 
@@ -56,7 +58,7 @@ namespace DataStructures {
 
             NDLoop::Iterator end();
 
-        private:
+        private:            
             const uint64_t dimensions;
 
             const uint64_t max;

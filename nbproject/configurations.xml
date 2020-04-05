@@ -13,8 +13,10 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="Rules" projectFiles="true">
         <itemPath>include/BoxLineReduction.hpp</itemPath>
+        <itemPath>include/HiddenN.hpp</itemPath>
         <itemPath>include/HiddenSingle.hpp</itemPath>
         <itemPath>include/IntersectionRemoval.hpp</itemPath>
+        <itemPath>include/NakedN.hpp</itemPath>
         <itemPath>include/NakedSingle.hpp</itemPath>
         <itemPath>include/Rule.hpp</itemPath>
       </logicalFolder>
@@ -34,8 +36,10 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="Rules" projectFiles="true">
         <itemPath>src/BoxLineReduction.cpp</itemPath>
+        <itemPath>src/HiddenN.cpp</itemPath>
         <itemPath>src/HiddenSingle.cpp</itemPath>
         <itemPath>src/IntersectionRemoval.cpp</itemPath>
+        <itemPath>src/NakedN.cpp</itemPath>
         <itemPath>src/NakedSingle.cpp</itemPath>
         <itemPath>src/Rule.cpp</itemPath>
       </logicalFolder>
@@ -86,6 +90,8 @@
       </item>
       <item path="include/Grid.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/HiddenN.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/HiddenSingle.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/House.hpp" ex="false" tool="3" flavor2="0">
@@ -93,6 +99,8 @@
       <item path="include/IntersectionRemoval.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/NDLoop.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/NakedN.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/NakedSingle.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -106,11 +114,15 @@
       </item>
       <item path="src/Grid.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/HiddenN.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/HiddenSingle.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/IntersectionRemoval.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NDLoop.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NakedN.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NakedSingle.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -160,6 +172,8 @@
       </item>
       <item path="include/Grid.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/HiddenN.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/HiddenSingle.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/House.hpp" ex="false" tool="3" flavor2="0">
@@ -167,6 +181,8 @@
       <item path="include/IntersectionRemoval.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/NDLoop.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/NakedN.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/NakedSingle.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -180,11 +196,15 @@
       </item>
       <item path="src/Grid.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/HiddenN.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/HiddenSingle.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/IntersectionRemoval.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NDLoop.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NakedN.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NakedSingle.cpp" ex="false" tool="1" flavor2="0">
       </item>

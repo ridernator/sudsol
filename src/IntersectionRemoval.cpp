@@ -14,8 +14,8 @@ namespace Rules {
         bool returnVal = false;
 
         for (uint64_t candidate = 0; candidate < grid->getOrder(); ++candidate) {
-            for (auto box : grid->getBoxes()) {
-                auto elements = getElementsWithCandidate(DataStructures::House::BOX, box, candidate);
+            for (auto startOfBox : grid->getBoxes()) {
+                auto elements = getElementsWithCandidate(DataStructures::House::BOX, startOfBox, candidate);
 
                 if (!elements.empty()) {
                     if (areElementsInSameHouse(elements, DataStructures::House::ROW)) {

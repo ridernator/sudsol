@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/BoxLineReduction.o \
 	${OBJECTDIR}/src/Element.o \
 	${OBJECTDIR}/src/Grid.o \
+	${OBJECTDIR}/src/HiddenN.o \
 	${OBJECTDIR}/src/HiddenSingle.o \
 	${OBJECTDIR}/src/IntersectionRemoval.o \
 	${OBJECTDIR}/src/NDLoop.o \
@@ -86,6 +87,11 @@ ${OBJECTDIR}/src/Grid.o: src/Grid.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -Wall -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Grid.o src/Grid.cpp
+
+${OBJECTDIR}/src/HiddenN.o: src/HiddenN.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O3 -Wall -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/HiddenN.o src/HiddenN.cpp
 
 ${OBJECTDIR}/src/HiddenSingle.o: src/HiddenSingle.cpp
 	${MKDIR} -p ${OBJECTDIR}/src

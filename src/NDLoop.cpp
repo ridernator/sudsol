@@ -1,16 +1,20 @@
 #include "NDLoop.hpp"
 
+#include <algorithm>
+#include <iostream>
+#include <set>
+
 namespace DataStructures {
     NDLoop::NDLoop(uint64_t dimensions, 
-                     uint64_t max) : dimensions(dimensions), 
-                                     max(max) {
+                   uint64_t max) : dimensions(dimensions), 
+                                   max(max) {
     }
 
     NDLoop::Iterator NDLoop::begin() {
         std::vector<uint64_t> set;
 
         for (uint64_t dimension = 0; dimension < dimensions; ++dimension) {
-            set.push_back(0);
+            set.push_back(dimension);
         }
 
         return Iterator(set, max);
@@ -52,15 +56,34 @@ namespace DataStructures {
     }
 
     void NDLoop::Iterator::update(std::vector<uint64_t>& values) {
-        for (uint64_t index = 0; index <= values.size(); ++index) {
-            if (index == values.size()) {
-                values.clear();
-            } else if (++values[index] == max) {
-                values[index] = 0;
-            } else {
+        do {
+            for (uint64_t index = 0; index <= values.size(); ++index) {
+                if (index == values.size()) {
+                    values.clear();
+                } else if (++values[index] == max) {
+                    values[index] = 0;
+                } else {
+                    break;
+                }
+            } 
+        } while (!unique(values));
+    }
+    
+    bool NDLoop::Iterator::unique(std::vector<uint64_t>& values) {
+        bool returnVal = true;
+        std::set<uint64_t> temp;
+        
+        for (auto value : values) {
+            if (temp.find(value) != temp.end()) {
+                returnVal = false;
+                
                 break;
             }
+            
+            temp.insert(value);
         }
+        
+        return returnVal;
     }
 
     NDLoop::Iterator::Holder::Holder(std::vector<uint64_t> heldItem) : heldItem(heldItem) {

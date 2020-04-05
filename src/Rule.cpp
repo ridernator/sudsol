@@ -77,6 +77,53 @@ namespace Rules{
         return returnVal;        
     }
     
+    std::set<DataStructures::Element*> Rule::getElementsWithCandidates(const DataStructures::House house,
+                                                                       DataStructures::Element* elementInHouse,
+                                                                       const std::vector<uint64_t> candidates) {  
+        return getElementsWithCandidates(house, elementInHouse, candidates, false);
+    }
+            
+    std::set<DataStructures::Element*> Rule::getElementsWithOnlyCandidates(const DataStructures::House house,
+                                                                           DataStructures::Element* elementInHouse,
+                                                                           const std::vector<uint64_t> candidates) {
+        return getElementsWithCandidates(house, elementInHouse, candidates, true);
+    }
+            
+    std::set<DataStructures::Element*> Rule::getElementsWithCandidates(const DataStructures::House house,
+                                                                       DataStructures::Element* elementInHouse,
+                                                                       const std::vector<uint64_t> candidates,
+                                                                       const bool only) {
+        bool valid;   
+        std::set<DataStructures::Element*> returnVal;
+        DataStructures::Element* traveller = getStartOfHouse(house, elementInHouse);
+       
+        while (traveller != NULL) {
+            valid = true;
+            
+            for (auto candidate : candidates) {
+                if (!traveller->containsCandidate(candidate)) {
+                    valid = false;
+                    
+                    break;
+                }
+            }
+            
+            if (valid) {
+                if (only) {
+                    if (traveller->getCandidates().size() == candidates.size()) {
+                        returnVal.insert(traveller);
+                    }
+                } else {
+                    returnVal.insert(traveller);
+                }
+            }
+            
+            traveller = traveller->getNext(house);
+        }
+        
+        return returnVal;
+    }
+    
     bool Rule::areElementsInSameHouse(const std::set<DataStructures::Element*> elements,
                                       const DataStructures::House house) {
         bool returnVal = true;
@@ -118,6 +165,10 @@ namespace Rules{
 
     const std::string& Rule::getName() const {
         return name;
+    }
+    
+    void Rule::setName(const std::string& name) {
+        this->name = name;
     }
 
 }

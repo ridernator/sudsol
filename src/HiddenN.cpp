@@ -18,17 +18,17 @@ namespace Rules {
         bool returnVal = false;
 
         for (auto house : DataStructures::HOUSES) {
-            for (auto element : grid->getHouses(house)) {
+            for (auto startOfHouse : grid->getHouses(house)) {
                 DataStructures::NDLoop loop(N, grid->getOrder());
 
-                for (auto set : loop) {
-                    auto possibleSet = getElementsWithCandidates(house, element, set);
+                for (auto candidates : loop) {
+                    auto possibleSet = getElementsWithCandidates(house, startOfHouse, candidates);
 
                     if (possibleSet.size() == N) {
                         bool match = true;
 
-                        for (auto candidate : set) {
-                            if (getElementsWithCandidate(house, element, candidate).size() != N) {
+                        for (auto candidate : candidates) {
+                            if (getElementsWithCandidate(house, startOfHouse, candidate).size() != N) {
                                 match = false;
 
                                 break;
@@ -37,7 +37,7 @@ namespace Rules {
 
                         if (match) {
                             for (uint64_t candidate = 0; candidate < grid->getOrder(); ++candidate) {
-                                if (std::find(set.begin(), set.end(), candidate) == set.end()) {
+                                if (std::find(candidates.begin(), candidates.end(), candidate) == candidates.end()) {
                                     for (auto element : possibleSet) {
                                         if (element->removeCandidate(candidate)) {
                                             returnVal = true;

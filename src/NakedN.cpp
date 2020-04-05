@@ -17,15 +17,15 @@ namespace Rules {
         bool returnVal = false;
 
         for (auto house : DataStructures::HOUSES) {
-            for (auto element : grid->getHouses(house)) {
+            for (auto startOfHouse : grid->getHouses(house)) {
                 DataStructures::NDLoop loop(N, grid->getOrder());
                 
-                for (auto set : loop) {
-                    auto possibleSet = getElementsWithOnlyCandidates(house, element, set);
+                for (auto candidates : loop) {
+                    auto possibleSet = getElementsWithOnlyCandidates(house, startOfHouse, candidates);
 
                     if (possibleSet.size() == N) {
-                        for (auto candidate : set) {
-                            if (removeCandidatesFromHouse(candidate, house, element, possibleSet)) {
+                        for (auto candidate : candidates) {
+                            if (removeCandidatesFromHouse(candidate, house, startOfHouse, possibleSet)) {
                                 returnVal = true;
                             }
                         }

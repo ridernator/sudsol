@@ -4,7 +4,7 @@
 #include "NakedSingle.hpp"
 #include "HiddenSingle.hpp"
 #include "BoxLineReduction.hpp"
-#include "IntersectionRemoval.hpp"
+#include "PointingSet.hpp"
 #include "NakedN.hpp"
 #include "HiddenN.hpp"
 #include "NFish.hpp"
@@ -19,8 +19,10 @@ int main(int, char** argv) {
     Solver solver(&grid);
     Rules::NakedSingle nakedSingle(&grid);
     Rules::HiddenSingle hiddenSingle(&grid);
+    //Rules::NakedN nakedSingle(&grid, 1);
+    //Rules::HiddenN hiddenSingle(&grid, 1);
     Rules::BoxLineReduction boxLineReduction(&grid);
-    Rules::IntersectionRemoval intersectionRemoval(&grid);
+    Rules::PointingSet pointingSet(&grid);
     Rules::NakedN naked2(&grid, 2);
     Rules::NakedN naked3(&grid, 3);
     Rules::NakedN naked4(&grid, 4);
@@ -34,7 +36,7 @@ int main(int, char** argv) {
     solver.addRule(&nakedSingle);
     solver.addRule(&hiddenSingle);
     solver.addRule(&boxLineReduction);
-    solver.addRule(&intersectionRemoval);
+    solver.addRule(&pointingSet);
     solver.addRule(&naked2);
     solver.addRule(&naked3);
     solver.addRule(&naked4);
@@ -55,7 +57,7 @@ int main(int, char** argv) {
 //    solver.addRule(&naked4);
 //    solver.addRule(&naked3);
 //    solver.addRule(&naked2);
-//    solver.addRule(&intersectionRemoval);
+//    solver.addRule(&pointingSet);
 //    solver.addRule(&boxLineReduction);
 //    solver.addRule(&hiddenSingle);
 //    solver.addRule(&nakedSingle);

@@ -9,9 +9,39 @@ namespace Rules {
     HiddenN::HiddenN(DataStructures::Grid* grid,
                      const uint64_t N) : Rule("", grid),
                                          N(N) {
-        std::stringstream nameStream;
-        nameStream << "Hidden (N=" << N << ')';
-        setName(nameStream.str());
+        switch (N) {
+            case 1: {
+                setName("Hidden Single");
+                
+                break;
+            }
+            
+            case 2: {
+                setName("Hidden Pair");
+                
+                break;
+            }
+            
+            case 3: {
+                setName("Hidden Triple");
+                
+                break;
+            }
+            
+            case 4: {
+                setName("Hidden Quad");
+                
+                break;
+            }
+            
+            default: {
+                std::stringstream nameStream;
+                nameStream << "Hidden (N=" << N << ')';
+                setName(nameStream.str());
+                
+                break;
+            }
+        }
     }
 
     bool HiddenN::solve() {

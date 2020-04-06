@@ -15,10 +15,10 @@
         <itemPath>include/BoxLineReduction.hpp</itemPath>
         <itemPath>include/HiddenN.hpp</itemPath>
         <itemPath>include/HiddenSingle.hpp</itemPath>
-        <itemPath>include/IntersectionRemoval.hpp</itemPath>
         <itemPath>include/NFish.hpp</itemPath>
         <itemPath>include/NakedN.hpp</itemPath>
         <itemPath>include/NakedSingle.hpp</itemPath>
+        <itemPath>include/PointingSet.hpp</itemPath>
         <itemPath>include/Rule.hpp</itemPath>
       </logicalFolder>
       <itemPath>include/Solver.hpp</itemPath>
@@ -39,10 +39,10 @@
         <itemPath>src/BoxLineReduction.cpp</itemPath>
         <itemPath>src/HiddenN.cpp</itemPath>
         <itemPath>src/HiddenSingle.cpp</itemPath>
-        <itemPath>src/IntersectionRemoval.cpp</itemPath>
         <itemPath>src/NFish.cpp</itemPath>
         <itemPath>src/NakedN.cpp</itemPath>
         <itemPath>src/NakedSingle.cpp</itemPath>
+        <itemPath>src/PointingSet.cpp</itemPath>
         <itemPath>src/Rule.cpp</itemPath>
       </logicalFolder>
       <itemPath>src/Solver.cpp</itemPath>
@@ -98,8 +98,6 @@
       </item>
       <item path="include/House.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/IntersectionRemoval.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/NDLoop.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/NFish.hpp" ex="false" tool="3" flavor2="0">
@@ -107,6 +105,8 @@
       <item path="include/NakedN.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/NakedSingle.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/PointingSet.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Rule.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -122,8 +122,6 @@
       </item>
       <item path="src/HiddenSingle.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/IntersectionRemoval.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/NDLoop.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NFish.cpp" ex="false" tool="1" flavor2="0">
@@ -131,6 +129,8 @@
       <item path="src/NakedN.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NakedSingle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PointingSet.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Rule.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -184,8 +184,6 @@
       </item>
       <item path="include/House.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/IntersectionRemoval.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/NDLoop.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/NFish.hpp" ex="false" tool="3" flavor2="0">
@@ -193,6 +191,8 @@
       <item path="include/NakedN.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/NakedSingle.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/PointingSet.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Rule.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -208,8 +208,6 @@
       </item>
       <item path="src/HiddenSingle.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/IntersectionRemoval.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/NDLoop.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NFish.cpp" ex="false" tool="1" flavor2="0">
@@ -217,6 +215,8 @@
       <item path="src/NakedN.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NakedSingle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PointingSet.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Rule.cpp" ex="false" tool="1" flavor2="0">
       </item>

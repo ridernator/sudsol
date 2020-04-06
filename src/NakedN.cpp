@@ -8,9 +8,39 @@ namespace Rules {
     NakedN::NakedN(DataStructures::Grid* grid,
                    const uint64_t N) : Rule("", grid),
                                        N(N) {
-        std::stringstream nameStream;
-        nameStream << "Naked (N=" << N << ')';
-        setName(nameStream.str());
+        switch (N) {
+            case 1: {
+                setName("Naked Single");
+                
+                break;
+            }
+            
+            case 2: {
+                setName("Naked Pair");
+                
+                break;
+            }
+            
+            case 3: {
+                setName("Naked Triple");
+                
+                break;
+            }
+            
+            case 4: {
+                setName("Naked Quad");
+                
+                break;
+            }
+            
+            default: {
+                std::stringstream nameStream;
+                nameStream << "Naked (N=" << N << ')';
+                setName(nameStream.str());
+                
+                break;
+            }
+        }        
     }
 
     bool NakedN::solve() {

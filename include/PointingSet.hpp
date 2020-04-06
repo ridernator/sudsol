@@ -5,10 +5,10 @@
 
 namespace Rules {
 
-    class IntersectionRemoval : public Rule {
+    class PointingSet : public Rule {
     public:
 
-        IntersectionRemoval(DataStructures::Grid* grid);
+        PointingSet(DataStructures::Grid* grid);
 
         virtual bool solve();
     };

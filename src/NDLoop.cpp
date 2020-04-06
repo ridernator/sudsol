@@ -73,6 +73,7 @@ namespace DataStructures {
         bool returnVal = true;
         std::set<uint64_t> temp;
         
+        // Ensure no duplicates in values
         for (auto value : values) {
             if (temp.find(value) != temp.end()) {
                 returnVal = false;
@@ -81,6 +82,21 @@ namespace DataStructures {
             }
             
             temp.insert(value);
+        }
+        
+        // Ensure each value is not less than the one before it
+        // (To remove duplicates)
+        uint64_t last = 0;        
+        if (returnVal) {
+            for (auto value : values) {
+                if (value < last) {
+                    returnVal = false;
+
+                    break;
+                }
+                
+                last = value;
+            }
         }
         
         return returnVal;

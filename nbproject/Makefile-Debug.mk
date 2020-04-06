@@ -40,11 +40,11 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Grid.o \
 	${OBJECTDIR}/src/HiddenN.o \
 	${OBJECTDIR}/src/HiddenSingle.o \
-	${OBJECTDIR}/src/IntersectionRemoval.o \
 	${OBJECTDIR}/src/NDLoop.o \
 	${OBJECTDIR}/src/NFish.o \
 	${OBJECTDIR}/src/NakedN.o \
 	${OBJECTDIR}/src/NakedSingle.o \
+	${OBJECTDIR}/src/PointingSet.o \
 	${OBJECTDIR}/src/Rule.o \
 	${OBJECTDIR}/src/Solver.o \
 	${OBJECTDIR}/src/main.o
@@ -99,11 +99,6 @@ ${OBJECTDIR}/src/HiddenSingle.o: src/HiddenSingle.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/HiddenSingle.o src/HiddenSingle.cpp
 
-${OBJECTDIR}/src/IntersectionRemoval.o: src/IntersectionRemoval.cpp
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/IntersectionRemoval.o src/IntersectionRemoval.cpp
-
 ${OBJECTDIR}/src/NDLoop.o: src/NDLoop.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
@@ -123,6 +118,11 @@ ${OBJECTDIR}/src/NakedSingle.o: src/NakedSingle.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/NakedSingle.o src/NakedSingle.cpp
+
+${OBJECTDIR}/src/PointingSet.o: src/PointingSet.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/PointingSet.o src/PointingSet.cpp
 
 ${OBJECTDIR}/src/Rule.o: src/Rule.cpp
 	${MKDIR} -p ${OBJECTDIR}/src

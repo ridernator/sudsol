@@ -8,9 +8,33 @@ namespace Rules {
     NFish::NFish(DataStructures::Grid* grid,
                  const uint64_t N) : Rule("", grid),
                                      N(N) {
-        std::stringstream nameStream;
-        nameStream << "Basic Fish (N=" << N << ')';
-        setName(nameStream.str());
+        switch (N) {
+            case 2: {
+                setName("X-Wing");
+                
+                break;
+            }
+            
+            case 3: {
+                setName("Swordfish");
+                
+                break;
+            }
+            
+            case 4: {
+                setName("Jellyfish");
+                
+                break;
+            }
+            
+            default: {
+                std::stringstream nameStream;
+                nameStream << "Basic Fish (N=" << N << ')';
+                setName(nameStream.str());
+                
+                break;
+            }
+        }    
     }
 
     bool NFish::solve() {

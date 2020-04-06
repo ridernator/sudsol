@@ -23,7 +23,7 @@ bool Solver::solve() {
         for (auto rule : rules) {
             std::cout << "Running rule \"" << rule->getName() << "..." ;
             if (rule->solve()) {
-                std::cout << "changes made : " << std::endl;
+                std::cout << " Changes made : " << std::endl;
                 grid->printGrid();
                 std::cout << std::endl;
                 
@@ -31,7 +31,7 @@ bool Solver::solve() {
                 
                 break;
             } else {
-                std::cout << "no change" << std::endl;
+                std::cout << " No change" << std::endl;
             }
         }
 

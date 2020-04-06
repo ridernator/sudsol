@@ -1,16 +1,16 @@
 #include <iostream>
 
-#include "IntersectionRemoval.hpp"
+#include "PointingSet.hpp"
 
 #include "Direction.hpp"
 #include "House.hpp"
 
 namespace Rules {
 
-    IntersectionRemoval::IntersectionRemoval(DataStructures::Grid* grid) : Rule("Intersection Removal", grid) {
+    PointingSet::PointingSet(DataStructures::Grid* grid) : Rule("Pointing Set", grid) {
     }
 
-    bool IntersectionRemoval::solve() {
+    bool PointingSet::solve() {
         bool returnVal = false;
 
         for (uint64_t candidate = 0; candidate < grid->getOrder(); ++candidate) {

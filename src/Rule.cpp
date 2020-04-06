@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 
 #include "Rule.hpp"
 
@@ -9,8 +10,8 @@ namespace Rules{
         
     }
 
-    std::set<DataStructures::Element*> Rule::getPeers(DataStructures::Element* element)  {
-        std::set<DataStructures::Element*> peers;
+    std::vector<DataStructures::Element*> Rule::getPeers(DataStructures::Element* element)  {
+        std::vector<DataStructures::Element*> peers;
         DataStructures::Element* traveller;
 
         for (const auto& house : DataStructures::HOUSES) {
@@ -18,7 +19,7 @@ namespace Rules{
                 traveller = element->getNeighbour(direction, house);
 
                 while (traveller != NULL) {
-                    peers.insert(traveller);
+                    peers.push_back(traveller);
 
                     traveller = traveller->getNeighbour(direction, house);
                 }
@@ -60,15 +61,15 @@ namespace Rules{
         }
     }
     
-    std::set<DataStructures::Element*> Rule::getElementsWithCandidate(const DataStructures::House house,
-                                                                      DataStructures::Element* elementInHouse,
-                                                                      const uint64_t candidate) {        
-        std::set<DataStructures::Element*> returnVal;
+    std::vector<DataStructures::Element*> Rule::getElementsWithCandidate(const DataStructures::House house,
+                                                                         DataStructures::Element* elementInHouse,
+                                                                         const uint64_t candidate) {        
+        std::vector<DataStructures::Element*> returnVal;
         DataStructures::Element* traveller = getStartOfHouse(house, elementInHouse);
        
         while (traveller != NULL) {
             if (traveller->containsCandidate(candidate)) {
-                returnVal.insert(traveller);
+                returnVal.push_back(traveller);
             }
             
             traveller = traveller->getNext(house);
@@ -77,24 +78,24 @@ namespace Rules{
         return returnVal;        
     }
     
-    std::set<DataStructures::Element*> Rule::getElementsWithCandidates(const DataStructures::House house,
-                                                                       DataStructures::Element* elementInHouse,
-                                                                       const std::vector<uint64_t> candidates) {  
+    std::vector<DataStructures::Element*> Rule::getElementsWithCandidates(const DataStructures::House house,
+                                                                          DataStructures::Element* elementInHouse,
+                                                                          const std::vector<uint64_t> candidates) {  
         return getElementsWithCandidates(house, elementInHouse, candidates, false);
     }
             
-    std::set<DataStructures::Element*> Rule::getElementsWithOnlyCandidates(const DataStructures::House house,
-                                                                           DataStructures::Element* elementInHouse,
-                                                                           const std::vector<uint64_t> candidates) {
+    std::vector<DataStructures::Element*> Rule::getElementsWithOnlyCandidates(const DataStructures::House house,
+                                                                              DataStructures::Element* elementInHouse,
+                                                                              const std::vector<uint64_t> candidates) {
         return getElementsWithCandidates(house, elementInHouse, candidates, true);
     }
             
-    std::set<DataStructures::Element*> Rule::getElementsWithCandidates(const DataStructures::House house,
-                                                                       DataStructures::Element* elementInHouse,
-                                                                       const std::vector<uint64_t> candidates,
-                                                                       const bool only) {
+    std::vector<DataStructures::Element*> Rule::getElementsWithCandidates(const DataStructures::House house,
+                                                                          DataStructures::Element* elementInHouse,
+                                                                          const std::vector<uint64_t> candidates,
+                                                                          const bool only) {
         bool valid;   
-        std::set<DataStructures::Element*> returnVal;
+        std::vector<DataStructures::Element*> returnVal;
         DataStructures::Element* traveller = getStartOfHouse(house, elementInHouse);
        
         while (traveller != NULL) {
@@ -111,10 +112,10 @@ namespace Rules{
             if (valid) {
                 if (only) {
                     if (traveller->getCandidates().size() == candidates.size()) {
-                        returnVal.insert(traveller);
+                        returnVal.push_back(traveller);
                     }
                 } else {
-                    returnVal.insert(traveller);
+                    returnVal.push_back(traveller);
                 }
             }
             
@@ -124,7 +125,7 @@ namespace Rules{
         return returnVal;
     }
     
-    bool Rule::areElementsInSameHouse(const std::set<DataStructures::Element*> elements,
+    bool Rule::areElementsInSameHouse(const std::vector<DataStructures::Element*> elements,
                                       const DataStructures::House house) {
         bool returnVal = true;
         
@@ -146,12 +147,12 @@ namespace Rules{
     bool Rule::removeCandidatesFromHouse(const uint64_t candidate,
                                          const DataStructures::House house,
                                          DataStructures::Element* elementInHouse,
-                                         const std::set<DataStructures::Element*> apartFrom) {
+                                         const std::vector<DataStructures::Element*> apartFrom) {
         bool returnVal = false;
         DataStructures::Element* traveller = getStartOfHouse(house, elementInHouse);
         
         while (traveller != NULL) {
-            if (apartFrom.find(traveller) == apartFrom.end()) {
+            if (std::find(apartFrom.begin(), apartFrom.end(), traveller) == apartFrom.end()) {
                 if (traveller->removeCandidate(candidate)) {
                     returnVal = true;
                 }

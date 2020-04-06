@@ -1,6 +1,6 @@
 #pragma once
 
-#include <set>
+#include <vector>
 
 #include "Grid.hpp"
 
@@ -17,7 +17,7 @@ namespace Rules {
             static void setValue(DataStructures::Element* element,
                                  const uint64_t value);
 
-            static std::set<DataStructures::Element*> getPeers(DataStructures::Element* element);
+            static std::vector<DataStructures::Element*> getPeers(DataStructures::Element* element);
 
             static DataStructures::Element* getStartOfRow(DataStructures::Element* element);
 
@@ -28,25 +28,25 @@ namespace Rules {
             static DataStructures::Element* getStartOfHouse(DataStructures::House house,
                                                             DataStructures::Element* element);
             
-            static std::set<DataStructures::Element*> getElementsWithCandidate(const DataStructures::House house,
-                                                                               DataStructures::Element* elementInHouse,
-                                                                               const uint64_t candidate);
+            static std::vector<DataStructures::Element*> getElementsWithCandidate(const DataStructures::House house,
+                                                                                  DataStructures::Element* elementInHouse,
+                                                                                  const uint64_t candidate);
             
-            static std::set<DataStructures::Element*> getElementsWithCandidates(const DataStructures::House house,
-                                                                                DataStructures::Element* elementInHouse,
-                                                                                const std::vector<uint64_t> candidates);
+            static std::vector<DataStructures::Element*> getElementsWithCandidates(const DataStructures::House house,
+                                                                                   DataStructures::Element* elementInHouse,
+                                                                                   const std::vector<uint64_t> candidates);
             
-            static std::set<DataStructures::Element*> getElementsWithOnlyCandidates(const DataStructures::House house,
-                                                                                    DataStructures::Element* elementInHouse,
-                                                                                    const std::vector<uint64_t> candidates);
+            static std::vector<DataStructures::Element*> getElementsWithOnlyCandidates(const DataStructures::House house,
+                                                                                       DataStructures::Element* elementInHouse,
+                                                                                       const std::vector<uint64_t> candidates);
             
-            static bool areElementsInSameHouse(const std::set<DataStructures::Element*> elements,
+            static bool areElementsInSameHouse(const std::vector<DataStructures::Element*> elements,
                                                const DataStructures::House house);
             
             static bool removeCandidatesFromHouse(const uint64_t candidate,
                                                   const DataStructures::House house,
                                                   DataStructures::Element* elementInHouse,
-                                                  const std::set<DataStructures::Element*> apartFrom);
+                                                  const std::vector<DataStructures::Element*> apartFrom);
 
             const std::string& getName() const;
 
@@ -58,9 +58,9 @@ namespace Rules {
         private:
             std::string name;
             
-            static std::set<DataStructures::Element*> getElementsWithCandidates(const DataStructures::House house,
-                                                                                DataStructures::Element* elementInHouse,
-                                                                                const std::vector<uint64_t> candidates,
-                                                                                const bool only);
+            static std::vector<DataStructures::Element*> getElementsWithCandidates(const DataStructures::House house,
+                                                                                   DataStructures::Element* elementInHouse,
+                                                                                   const std::vector<uint64_t> candidates,
+                                                                                   const bool only);
     };
 }

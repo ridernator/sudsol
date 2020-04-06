@@ -52,7 +52,7 @@ namespace DataStructures {
 
         public:
             NDLoop(const uint64_t dimensions,
-                    const uint64_t max);
+                   const uint64_t max);
 
             NDLoop::Iterator begin();
 

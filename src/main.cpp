@@ -7,6 +7,7 @@
 #include "IntersectionRemoval.hpp"
 #include "NakedN.hpp"
 #include "HiddenN.hpp"
+#include "NFish.hpp"
 
 int main(int, char** argv) {
     DataStructures::Grid grid(*(argv + 1));
@@ -26,6 +27,9 @@ int main(int, char** argv) {
     Rules::HiddenN hidden2(&grid, 2);
     Rules::HiddenN hidden3(&grid, 3);
     Rules::HiddenN hidden4(&grid, 4);
+    Rules::NFish fish2(&grid, 2);
+    Rules::NFish fish3(&grid, 3);
+    Rules::NFish fish4(&grid, 4);
     
     solver.addRule(&nakedSingle);
     solver.addRule(&hiddenSingle);
@@ -37,8 +41,14 @@ int main(int, char** argv) {
     solver.addRule(&hidden2);
     solver.addRule(&hidden3);
     solver.addRule(&hidden4);
+    solver.addRule(&fish2);
+    solver.addRule(&fish3);
+    solver.addRule(&fish4);
     
     // Test configuration
+//    solver.addRule(&fish4);
+//    solver.addRule(&fish3);
+//    solver.addRule(&fish2);
 //    solver.addRule(&hidden4);
 //    solver.addRule(&hidden3);
 //    solver.addRule(&hidden2);

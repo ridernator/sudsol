@@ -19,8 +19,6 @@ int main(int, char** argv) {
     Solver solver(&grid);
     Rules::NakedSingle nakedSingle(&grid);
     Rules::HiddenSingle hiddenSingle(&grid);
-    //Rules::NakedN nakedSingle(&grid, 1);
-    //Rules::HiddenN hiddenSingle(&grid, 1);
     Rules::BoxLineReduction boxLineReduction(&grid);
     Rules::PointingSet pointingSet(&grid);
     Rules::NakedN naked2(&grid, 2);
@@ -35,14 +33,14 @@ int main(int, char** argv) {
     
     solver.addRule(&nakedSingle);
     solver.addRule(&hiddenSingle);
-    solver.addRule(&boxLineReduction);
-    solver.addRule(&pointingSet);
     solver.addRule(&naked2);
     solver.addRule(&naked3);
-    solver.addRule(&naked4);
     solver.addRule(&hidden2);
     solver.addRule(&hidden3);
+    solver.addRule(&naked4);
     solver.addRule(&hidden4);
+    solver.addRule(&pointingSet);
+    solver.addRule(&boxLineReduction);
     solver.addRule(&fish2);
     solver.addRule(&fish3);
     solver.addRule(&fish4);

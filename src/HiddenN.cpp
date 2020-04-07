@@ -50,41 +50,39 @@ namespace Rules {
         bool allCandidatesFound;
 
         for (auto house : DataStructures::HOUSES) {
-            if (house == DataStructures::House::ROW) {
-                for (auto startOfHouse : grid->getHouses(house)) {
-                    DataStructures::NDLoop loop(N, grid->getOrder());
+            for (auto startOfHouse : grid->getHouses(house)) {
+                DataStructures::NDLoop loop(N, grid->getOrder());
 
-                    for (auto candidates : loop) {
-                        auto possibleSet = getElementsWithCandidatesInSet(house, startOfHouse, candidates);
+                for (auto candidates : loop) {
+                    auto possibleSet = getElementsWithCandidatesInSet(house, startOfHouse, candidates);
 
-                        if (possibleSet.size() == N) {
-                            allCandidatesFound = true;
+                    if (possibleSet.size() == N) {
+                        allCandidatesFound = true;
 
-                            for (auto testCandidate : candidates) {
-                                thisCandidateFound = false;
-                            
-                                for (auto element : possibleSet) {
-                                    if (element->containsCandidate(testCandidate)) {
-                                        thisCandidateFound = true;
+                        for (auto testCandidate : candidates) {
+                            thisCandidateFound = false;
 
-                                        break;
-                                    }
-                                }
+                            for (auto element : possibleSet) {
+                                if (element->containsCandidate(testCandidate)) {
+                                    thisCandidateFound = true;
 
-                                if (!thisCandidateFound) {
-                                    allCandidatesFound = false;
-                                    
                                     break;
                                 }
                             }
 
-                            if (allCandidatesFound) {
-                                for (auto element : possibleSet) {
-                                    for (uint64_t candidate = 0; candidate < grid->getOrder(); ++candidate) {
-                                        if (std::find(candidates.begin(), candidates.end(), candidate) == candidates.end()) {
-                                            if (element->removeCandidate(candidate)) {
-                                                returnVal = true;
-                                            }
+                            if (!thisCandidateFound) {
+                                allCandidatesFound = false;
+
+                                break;
+                            }
+                        }
+
+                        if (allCandidatesFound) {
+                            for (auto element : possibleSet) {
+                                for (uint64_t candidate = 0; candidate < grid->getOrder(); ++candidate) {
+                                    if (std::find(candidates.begin(), candidates.end(), candidate) == candidates.end()) {
+                                        if (element->removeCandidate(candidate)) {
+                                            returnVal = true;
                                         }
                                     }
                                 }

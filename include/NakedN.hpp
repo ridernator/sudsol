@@ -13,5 +13,9 @@ namespace Rules {
             
         private :
             const uint64_t N;
+            
+            std::vector<DataStructures::Element*> getElementsWithCandidatesOnlyInSet(const DataStructures::House house,
+                                                                                     DataStructures::Element* elementInHouse,
+                                                                                     const std::vector<uint64_t> candidates);
     };
 }

@@ -46,31 +46,45 @@ namespace Rules {
 
     bool HiddenN::solve() {
         bool returnVal = false;
+        bool thisCandidateFound;
+        bool allCandidatesFound;
 
         for (auto house : DataStructures::HOUSES) {
-            for (auto startOfHouse : grid->getHouses(house)) {
-                DataStructures::NDLoop loop(N, grid->getOrder());
+            if (house == DataStructures::House::ROW) {
+                for (auto startOfHouse : grid->getHouses(house)) {
+                    DataStructures::NDLoop loop(N, grid->getOrder());
 
-                for (auto candidates : loop) {
-                    auto possibleSet = getElementsWithCandidates(house, startOfHouse, candidates);
+                    for (auto candidates : loop) {
+                        auto possibleSet = getElementsWithCandidatesInSet(house, startOfHouse, candidates);
 
-                    if (possibleSet.size() == N) {
-                        bool match = true;
+                        if (possibleSet.size() == N) {
+                            allCandidatesFound = true;
 
-                        for (auto candidate : candidates) {
-                            if (getElementsWithCandidate(house, startOfHouse, candidate).size() != N) {
-                                match = false;
+                            for (auto testCandidate : candidates) {
+                                thisCandidateFound = false;
+                            
+                                for (auto element : possibleSet) {
+                                    if (element->containsCandidate(testCandidate)) {
+                                        thisCandidateFound = true;
 
-                                break;
+                                        break;
+                                    }
+                                }
+
+                                if (!thisCandidateFound) {
+                                    allCandidatesFound = false;
+                                    
+                                    break;
+                                }
                             }
-                        }
 
-                        if (match) {
-                            for (uint64_t candidate = 0; candidate < grid->getOrder(); ++candidate) {
-                                if (std::find(candidates.begin(), candidates.end(), candidate) == candidates.end()) {
-                                    for (auto element : possibleSet) {
-                                        if (element->removeCandidate(candidate)) {
-                                            returnVal = true;
+                            if (allCandidatesFound) {
+                                for (auto element : possibleSet) {
+                                    for (uint64_t candidate = 0; candidate < grid->getOrder(); ++candidate) {
+                                        if (std::find(candidates.begin(), candidates.end(), candidate) == candidates.end()) {
+                                            if (element->removeCandidate(candidate)) {
+                                                returnVal = true;
+                                            }
                                         }
                                     }
                                 }
@@ -79,6 +93,36 @@ namespace Rules {
                     }
                 }
             }
+        }
+
+        return returnVal;
+    }
+    
+    std::vector<DataStructures::Element*> HiddenN::getElementsWithCandidatesInSet(const DataStructures::House house,
+                                                                                  DataStructures::Element* elementInHouse,
+                                                                                  const std::vector<uint64_t> candidates) {
+        bool valid;
+        std::vector<DataStructures::Element*> returnVal;
+        DataStructures::Element* traveller = getStartOfHouse(house, elementInHouse);
+
+        while (traveller != NULL) {
+            if (!traveller->isValueSet()) {
+                valid = false;
+
+                for (auto candidate : candidates) {
+                    if (traveller->containsCandidate(candidate)) {
+                        valid = true;
+
+                        break;
+                    }
+                }
+
+                if (valid) {
+                    returnVal.push_back(traveller);
+                }
+            }
+
+            traveller = traveller->getNext(house);
         }
 
         return returnVal;
